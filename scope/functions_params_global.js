@@ -1,6 +1,11 @@
 // @author - Junaid Ansari
 
+// scope @ function level
+
+// 'use strict';
 var foo = "global"; // created in global scope
+
+// dontknowjs; // would throw ReferenceError
 
 function bar()
 {
@@ -11,6 +16,7 @@ function bar()
 
 function baz(foo)
 {
+  // var foo;  --- this would be ignored as it will be like re-declaration.
   console.log(foo); // prints undefined
   foo = "baz";
   console.log(foo);
@@ -77,8 +83,10 @@ function baz(foo)
   foo = "baz";
   console.log(foo);
   // console.log(bam); // would throw ReferenceError: bam is not defined
-  bam = "yay";         // will cause a global variable to be created
-                       // Note: this will happen only during assignment.
+  bam = "yay";         // Will cause a global variable to be created -
+                       // only in non-strict mode (leakage of global variable)
+                       // Automatic Global Results from Undeclared LHS only in
+                       // non-strict mode.
   console.log(bam);  // prints global variable value
 }
 
