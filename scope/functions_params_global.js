@@ -63,7 +63,7 @@ yay
 */
 
 /*
-The above program would get translated to something like below;
+The above program conceptually would look like something below;
 
 function bar()
 {
