@@ -36,4 +36,5 @@ d = function(){
 
 Notes: functions gets hoisted first and then var
        function hoisting overwrite previous function declaration
+       hoisting allows mutual recursion, function declarations are moved
 */
